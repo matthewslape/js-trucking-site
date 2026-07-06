@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | JS Trucking & Excavation</title>
 <meta name="description" content="Contact JS Trucking & Excavation for a free quote. Serving Chehalis, Centralia, Olympia and Southwest Washington.">
+<meta name="theme-color" content="#0B0C0D">
+<link rel="canonical" href="https://www.jstruckex.com/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact | JS Trucking & Excavation">
+<meta property="og:description" content="Contact JS Trucking & Excavation for a free quote. Serving Chehalis, Centralia, Olympia and Southwest Washington.">
+<meta property="og:url" content="https://www.jstruckex.com/contact.html">
+<meta property="og:image" content="https://www.jstruckex.com/assets/og-image.jpg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="styles.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +26,7 @@
 <header class="site">
   <div class="header-row">
     <a class="logo" href="index.html" aria-label="JS Trucking and Excavation home">
-      <img src="assets/logo.png" alt="JS Trucking &amp; Excavation">
+      <img src="assets/logo.png" alt="JS Trucking &amp; Excavation" width="527" height="120">
     </a>
 
     <nav class="primary" aria-label="Primary">
@@ -102,9 +110,12 @@
         </div>
       </div>
 
-      <form class="quote" id="quoteForm" novalidate>
+      <form class="quote" id="quoteForm" action="https://formsubmit.co/office@jstruckandex.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New quote request from jstruckex.com">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" required autocomplete="name"></div>
         <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required autocomplete="tel"></div>
+        <div class="field"><label for="email">Email (optional)</label><input type="email" id="email" name="email" autocomplete="email"></div>
         <div class="field">
           <label for="service">Service needed</label>
           <select id="service" name="service">
@@ -119,7 +130,8 @@
           </select>
         </div>
         <div class="field"><label for="details">Job details (optional)</label><textarea id="details" name="details" placeholder="Location, timeline, rough scope of work"></textarea></div>
-        <button class="btn btn-primary" type="submit">Send Quote Request</button>
+        <button class="btn btn-primary" type="submit" id="quoteSubmit">Send Quote Request</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         <p class="form-note">We reply within one business day. For urgent jobs, call directly.</p>
       </form>
     </div>
@@ -129,7 +141,7 @@
 <footer>
   <div class="wrap footer-grid">
     <div>
-      <div class="foot-logo"><img src="assets/logo.png" alt="JS Trucking &amp; Excavation"></div>
+      <div class="foot-logo"><img src="assets/logo.png" alt="JS Trucking &amp; Excavation" width="527" height="120"></div>
       <p style="max-width:38ch; color:var(--gray-light);">Owner-operated excavation and trucking contractor serving Southwest Washington for over 20 years. Licensed and insured.</p>
     </div>
     <div>
@@ -142,8 +154,10 @@
       </ul>
     </div>
     <div>
-      <h4>Registration</h4>
+      <h4>Contact &amp; Registration</h4>
       <ul>
+        <li><a href="tel:13602698462">(360) 269-8462</a></li>
+        <li><a href="mailto:office@jstruckandex.com">office@jstruckandex.com</a></li>
         <li>USDOT #3612660</li>
         <li>Licensed &amp; Insured</li>
         <li>Chehalis, WA</li>

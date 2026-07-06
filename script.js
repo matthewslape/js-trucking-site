@@ -13,10 +13,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.getElementById('quoteForm');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    const submitBtn = document.getElementById('quoteSubmit');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      form.innerHTML = '<p style="font-size:1.05rem; font-weight:600;">Thanks &mdash; your request is in.</p><p style="color:var(--steel); font-size:0.94rem;">We reply within one business day. For anything urgent, call (360) 269-8462 directly.</p>';
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      status.textContent = '';
+      status.className = 'form-status';
+
+      try {
+        const endpoint = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (!res.ok) throw new Error('Request failed');
+
+        form.innerHTML = '<p style="font-size:1.05rem; font-weight:600;">Thanks &mdash; your request is in.</p><p style="color:var(--steel); font-size:0.94rem;">We reply within one business day. For anything urgent, call <a href="tel:13602698462">(360) 269-8462</a> directly.</p>';
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Quote Request';
+        status.className = 'form-status error';
+        status.innerHTML = 'Something went wrong sending your request. Please try again, or call <a href="tel:13602698462">(360) 269-8462</a>.';
+      }
     });
   }
 });
