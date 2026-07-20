@@ -35,7 +35,10 @@ h1,h2,h3{
   letter-spacing:0.02em;
   margin:0;
   color:var(--black);
+  text-wrap:balance;
 }
+
+p, .section-desc, .gallery-cap, .plate-extra, .hero-sub, li{text-wrap:pretty;}
 
 a{color:inherit;}
 img{max-width:100%; height:auto; display:block;}

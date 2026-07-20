@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         if (!res.ok) throw new Error('Request failed');
 
-        form.innerHTML = '<p style="font-size:1.05rem; font-weight:600;">Thanks &mdash; your request is in.</p><p style="color:var(--steel); font-size:0.94rem;">We reply within one business day. For anything urgent, call <a href="tel:13602698462">(360) 269-8462</a> directly.</p>';
+        form.innerHTML = '<p style="font-size:1.05rem; font-weight:600;">Thanks! Your request is in.</p><p style="color:var(--steel); font-size:0.94rem;">We reply within one business day. For anything urgent, call <a href="tel:13602698462">(360) 269-8462</a> directly.</p>';
       } catch (err) {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Quote Request';
