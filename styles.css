@@ -173,6 +173,7 @@ h2.section-title{font-size:clamp(1.7rem, 4vw, 2.5rem); line-height:1.05;}
 .services-grid{display:grid; grid-template-columns:1fr; gap:16px;}
 @media (min-width:640px){ .services-grid{grid-template-columns:1fr 1fr;} }
 @media (min-width:980px){ .services-grid{grid-template-columns:repeat(3,1fr);} }
+@media (min-width:980px){ .services-grid.two{grid-template-columns:1fr 1fr;} }
 
 .plate{background:var(--white); border:1px solid var(--gray-light); border-radius:3px; padding:26px 22px; position:relative;}
 .plate::before{
