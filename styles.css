@@ -114,9 +114,11 @@ nav.primary a.active{border-bottom-color:var(--white); color:var(--white);}
 .hero{position:relative; overflow:hidden; background:var(--black); color:var(--paper);}
 .hero-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.42; filter:saturate(0.85); pointer-events:none;}
 .hero-truck{position:absolute; right:-5%; bottom:-12%; width:48%; max-width:620px; opacity:0.1; pointer-events:none;}
+.hero-mark{position:absolute; right:-4%; bottom:-10%; width:42%; max-width:560px; opacity:0.16; pointer-events:none;}
+@media (max-width:800px){ .hero-mark{width:64%; opacity:0.12; right:-8%;} }
 .hero-grid-lines{
-  position:absolute; inset:0; opacity:0.5;
-  background-image:linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  position:absolute; inset:0; opacity:0.55;
+  background-image:linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
   background-size:44px 44px;
 }
 .hero-inner{position:relative; z-index:1; padding:72px 0 56px; width:100%;}
