@@ -124,7 +124,7 @@ nav.primary a.active{border-bottom-color:var(--white); color:var(--white);}
   background-image:linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px);
   background-size:44px 44px;
 }
-.hero-inner{position:relative; z-index:1; padding:72px 0 56px; width:100%;}
+.hero-inner{position:relative; z-index:1; padding-top:72px; padding-bottom:56px; width:100%;}
 @media (max-width:800px){ .hero-truck{width:70%; opacity:0.07; right:-10%;} }
 .eyebrow{
   font-family:var(--mono); font-size:0.76rem; letter-spacing:0.16em;
