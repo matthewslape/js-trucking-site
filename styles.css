@@ -12,6 +12,9 @@
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   --max: 1180px;
+
+  /* Strength of the dirt texture laid over the solid-black bands (0 = off) */
+  --dirt-opacity: 0.12;
 }
 
 *{box-sizing:border-box;}
@@ -290,6 +293,36 @@ footer a:hover{color:var(--white);}
   max-width:var(--max); margin:34px auto 0; padding:20px 20px 0; border-top:1px solid rgba(255,255,255,0.1);
   font-size:0.78rem; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between;
 }
+
+/* ---------- Dirt texture on solid-black sections ---------- */
+/* Seamless tile laid over the flat-black bands at low opacity to give them
+   some ground-level grit. screen is used deliberately: over near-black,
+   overlay/soft-light/multiply collapse to nothing, while screen lets the
+   lighter grains catch light without touching the blacks. The texture sits
+   on a ::before behind the content, so headings, forms and links are never
+   blended or dimmed. */
+.about-band, .contact-band, footer{ position:relative; }
+.about-band, .contact-band{ overflow:hidden; }
+
+.about-band::before,
+.contact-band::before,
+footer::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:url("assets/dirt-texture.jpg");
+  background-repeat:repeat;
+  background-size:360px 360px;
+  opacity:var(--dirt-opacity);
+  mix-blend-mode:screen;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* Keep all content above the texture layer */
+.about-band > .wrap,
+.contact-band > .wrap,
+footer > .wrap,
+footer > .footer-bottom{ position:relative; z-index:1; }
 
 /* ---------- Sticky mobile call bar ---------- */
 .mobile-call-bar{position:fixed; left:0; right:0; bottom:0; z-index:150; background:var(--black); border-top:1px solid var(--steel); display:flex;}
