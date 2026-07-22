@@ -14,7 +14,7 @@
   --max: 1180px;
 
   /* Strength of the dirt texture laid over the solid-black bands (0 = off) */
-  --dirt-opacity: 0.12;
+  --dirt-opacity: 0.144;
 }
 
 *{box-sizing:border-box;}
